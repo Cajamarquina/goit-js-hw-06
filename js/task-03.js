@@ -12,3 +12,16 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+ // Get the ul.gallery element
+ const galleryList = document.querySelector('.gallery');
+
+ // Create a markup string for the gallery items
+ const galleryMarkup = images.map((image) => `
+   <li class="gallery-item">
+     <img src="${image.url}" alt="${image.alt}">
+   </li>
+ `).join('');
+
+ // Insert the gallery items into the ul.gallery in a single operation
+ galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
